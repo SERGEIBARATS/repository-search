@@ -1,0 +1,56 @@
+.list {
+  border: 3px solid black;
+  padding: 2px;
+  width: 600px;
+  resize: both;
+  overflow: auto;
+  margin: 1px;
+  padding-left:10px;
+  cursor:pointer;
+
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: 2px solid black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 4px 2px;
+
+}
+.button1 {padding: 0.4px 10px;
+  border: 1px solid black;
+  box-shadow: 2px 2px;}
+
+.searchbox{
+	border: none;
+	width:117px;
+}
+
+.picsize {
+  height: 65px;
+  width: 65px;
+}
+
+.pagingClass{
+  margin: 0;
+  position: absolute;
+
+  left: 30%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+br {
+  display: block;
+  margin: 2px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="mobile"] {
+    width: 100%;
+
+  }
+}

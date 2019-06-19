@@ -1,0 +1,55 @@
+
+<div class="mobile" style="padding-left:15px">
+
+  <button class="button button1 mobile ">+ Add</button>
+   <i class="fa fa-search" style="padding-left:20px"></i>
+  <input type="text" id="myInput" class="searchbox" [(ngModel)]="userInput"  placeholder="Search products">
+  Sort by
+<select [(ngModel)]="sortBy">
+  <option value="name" selected="selected">name</option>
+  <option value="price">price</option>
+</select>
+</div>
+
+
+<div *ngIf="pruductEdits">
+  <app-details-product  [pruduct2show]="pruductEdits" [IDOfProduct]="IDProduct" (onSaveEvent)="onSave($event)"></app-details-product>
+</div>
+
+
+<div class="mobile" *ngFor="let usr of filteredUsers | filterProductsarrayPipe:userInput | sortFilterPipe:sortBy | pagingarrayPipe:curpage">
+
+  <a (click)="showEditComponent(usr)" >
+
+
+  <div class="list mobile" style="padding:8px; margin-left:16px">
+     <div style="float:left">
+      	<img class="picsize" src="{{usr.thumbnailUrl}}">
+     </div>
+
+    <div>
+	      {{usr.name}}  <br /> Product {{usr.id}} description:{{usr.description}}
+    </div>
+
+    <div style="float:right">
+	    <button style="background-color:orange; border: 1px solid;box-shadow: 2px 2px;"> Delete</button>
+    </div>
+  </div>
+
+  </a>
+
+  <br />
+</div>
+<div class="pagingClass">
+    <i class="fa fa-arrow-left" ></i>
+<button style= "border:none; background: none;" [disabled]="curpage == 1" (click)="clickPrev()">prev Page</button>
+
+<span style="padding:30px;">
+<label >{{curpage}}</label>
+<label style="padding:5px;">of</label>
+<label >{{numPages}}</label>
+</span>
+<button style= "border:none; background: none;" [disabled]="numPages == curpage" (click)="clickNext()">next Page</button>
+    <i class="fa fa-arrow-right" ></i>
+</div>
+

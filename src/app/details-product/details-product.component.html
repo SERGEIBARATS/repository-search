@@ -1,0 +1,40 @@
+<form class="col">
+<fieldset class="productDetails col" id="productEdit1" style="border: 3px solid black ;float:right;padding:20px; margin-right:16px;" >
+  <legend> Product {{IDOfProduct}} Details </legend>
+
+    <div>
+
+    </div>
+
+    <img class="picsize2" src={{pruduct2show.thumbnailUrl}}><br />
+
+        Name <br />
+       <input  class="namebox col" type="text"
+         [(ngModel)]="nameInput"  #nameVariable ="ngModel" [ngModelOptions]="{standalone: true}"  required pattern="[A-z,0-9, ]{2,}"/><br />
+       <div class="err" style="color:red"
+       [hidden]="nameVariable.valid">Name is required/Minimum two characters or Numbers</div>
+       <br />
+        Description <br />
+       <input type="text"
+       [(ngModel)]="descriptionInput"  #descriptionVariable ="ngModel" [ngModelOptions]="{standalone: true}"
+       class="descriptionbox col" > <br /><br />
+
+        Price <br />
+       <input type="text"
+       [(ngModel)]="valueInput"  #valueVariable ="ngModel" [ngModelOptions]="{standalone: true}"  required pattern="[1-9]{1}[0-9]{0,}"
+        class="pricebox col"  >
+        $
+        <br />
+       <div class="err" style="color:red"
+       [hidden]="valueVariable.valid">Price is required /Bigger than zero/Only numbers</div>
+       <br />
+
+
+        <div style="float:right" >
+          <button type="submit" [disabled]="nameVariable.model.length==0 ||valueVariable.model.length==0"
+          (click)="save(nameVariable.model, descriptionVariable.model, valueVariable.model)" class="buttonSave" style="background-color:#00cc66; border: 1px solid;box-shadow: 2px 2px;"> Save</button>
+        </div>
+
+  </fieldset>
+
+</form>
