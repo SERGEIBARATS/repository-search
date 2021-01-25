@@ -21,7 +21,7 @@ Each product has the following properties:
 7. Url Image
 
 ***
-![alt text](https://res.cloudinary.com/dyy8fcstp/image/upload/v1610442976/ratelimiter/high_level_ymlkbz.png)
+![alt text](https://res.cloudinary.com/v1611605775/Products/Screen_Shot_2021-01-25_at_22.16.08_uqgiso.png)
 ***
 
 1. Acquire Products data using an Api Call:
